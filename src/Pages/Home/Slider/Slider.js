@@ -8,7 +8,7 @@ import slider4 from '../../../images/slider4.jpg';
 
 const Slider = () => {
     return (
-        <div className="carousel w-full h-screen">
+        <div className="carousel w-full h-screen z-0">
             <div id="slide1" className="carousel-item relative w-full">
                 <img src={slider1} alt='slider1' className="w-full brightness-50" />
 
