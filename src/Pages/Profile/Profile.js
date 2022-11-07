@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../utilities/AuthProvider/AuthProvider';
 
+
 const Profile = () => {
     const { user } = useContext(AuthContext);
     return (
@@ -30,6 +31,8 @@ const Profile = () => {
 
             </div>
         </div>
+
+
     );
 };
 
