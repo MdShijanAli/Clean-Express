@@ -7,18 +7,30 @@ const ReviewSection = () => {
 
     const { user } = useContext(AuthContext);
 
-    const [reviews, setReviews] = useState({});
+
 
     const AddUser = event => {
         event.preventDefault();
-        console.log(reviews);
+        const form = event.target;
+        const name = form.name.value;
+        const email = user?.email || 'Unregistered';
+        const comment = form.comment.value;
+
+
+        const review = {
+            name,
+            email,
+            comment,
+            photo: user?.photoURL
+        }
+        console.log(review);
 
         fetch('https://assignment-11-server-phi.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(reviews)
+            body: JSON.stringify(review)
         })
             .then(res => res.json())
             .then(data => {
@@ -30,15 +42,7 @@ const ReviewSection = () => {
             })
     }
 
-    const InputBlur = event => {
-        const field = event.target.name;
-        const value = event.target.value;
 
-        const newReview = { ...reviews }
-        newReview[field] = value;
-        setReviews(newReview)
-
-    }
 
     return (
         <form onSubmit={AddUser}>
@@ -50,15 +54,15 @@ const ReviewSection = () => {
                             <h1 className="font-bold uppercase text-3xl">Leave a Comment</h1>
                         </div>
                         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 mt-5">
-                            <input onBlur={InputBlur} name='name' className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                            <input name='name' className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                                 type="text" placeholder="Name*" required />
 
-                            <input defaultValue={user?.email} onBlur={InputBlur} name='email' className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                            <input defaultValue={user?.email} readOnly name='email' className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                                 type="email" placeholder="Email*" required />
 
                         </div>
                         <div className="my-4">
-                            <textarea onBlur={InputBlur} name='comment' placeholder="Review*" className="w-full h-32 bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline" required></textarea>
+                            <textarea name='comment' placeholder="Review*" className="w-full h-32 bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline" required></textarea>
                         </div>
                         <div className="my-2 w-1/2 lg:w-1/4">
                             <button type='submit' className="uppercase text-sm font-bold tracking-wide bg-blue-900 text-gray-100 p-3 rounded-lg w-full 

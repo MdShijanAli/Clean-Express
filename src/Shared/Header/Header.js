@@ -96,6 +96,12 @@ const Header = () => {
                             </ul>
 
                             <div className="mt-3 space-y-2 md:hidden ">
+                                <NavLink className="text-white hover:text-indigo-200 " to='/my-reviews'>
+                                    {
+                                        user?.uid && <p className='my-8'>My-Reviews</p>
+                                    }
+                                </NavLink>
+
                                 <NavLink to='/profile'>
                                     {
                                         user?.uid && <div>
@@ -139,7 +145,13 @@ const Header = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="hidden md:flex">
+                    <div className="hidden md:flex items-center gap-2">
+
+                        <NavLink className="text-white hover:text-indigo-200" to='/my-reviews'>
+                            {
+                                user?.uid && <p>My-Reviews</p>
+                            }
+                        </NavLink>
 
 
                         <NavLink to='/profile'>

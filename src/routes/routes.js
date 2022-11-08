@@ -6,6 +6,7 @@ import Contact from "../Pages/Contact/Contact";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
+import MyReviews from "../Pages/MyReviews/MyReviews";
 import Profile from "../Pages/Profile/Profile";
 import Register from "../Pages/Register/Register";
 import ResetPass from "../Pages/ResetPass/ResetPass";
@@ -78,6 +79,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/reset-password',
                 element: <ResetPass></ResetPass>
+            },
+            {
+                path: '/my-reviews',
+                element: <MyReviews></MyReviews>
             }
         ]
     }

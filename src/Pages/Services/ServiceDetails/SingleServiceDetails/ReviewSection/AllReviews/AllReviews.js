@@ -13,9 +13,37 @@ const AllReviews = () => {
         <div className='my-20'>
             <h1 className='text-2xl font-semibold'>Total Reviews: {reviews.length}</h1>
             {
-                reviews.map(review => <div key={review._id}>
-                    <p>{review.name}</p>
-                </div>)
+                reviews.map(review => <tbody key={review._id}>
+
+                    <tr >
+
+
+                        <td>
+                            <div className="flex items-center space-x-3">
+                                <div className="avatar">
+                                    <div className="rounded-full w-12 h-12">
+                                        <img src={review.photo} alt="Avatar Tailwind CSS Component" />
+                                    </div>
+                                </div>
+                                <div>
+                                    <div className="font-bold">{review.name}</div>
+                                    <div className="text-sm opacity-50">{review.email}</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            {review.comment}
+                        </td>
+
+
+                    </tr>
+
+
+
+                </tbody>
+
+
+                )
             }
         </div>
     );
