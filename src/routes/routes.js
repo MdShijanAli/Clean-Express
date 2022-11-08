@@ -24,6 +24,7 @@ export const routes = createBrowserRouter([
             {
                 path: '/services',
                 element: <Services></Services>,
+                loader: () => fetch('https://assignment-11-server-phi.vercel.app/services')
 
             },
 
