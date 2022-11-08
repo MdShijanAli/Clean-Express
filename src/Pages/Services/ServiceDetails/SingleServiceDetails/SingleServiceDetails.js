@@ -1,5 +1,7 @@
 import { CheckIcon } from '@heroicons/react/24/solid';
 import React from 'react';
+import AllReviews from './ReviewSection/AllReviews/AllReviews';
+import ReviewSection from './ReviewSection/ReviewSection';
 
 const SingleServiceDetails = ({ singleService }) => {
     console.log(singleService);
@@ -16,6 +18,19 @@ const SingleServiceDetails = ({ singleService }) => {
                 </div>)
             }
             <p className='mt-10 text-gray-600 font-semibold'>{descriptionLast}</p>
+
+
+
+            <div>
+
+                <AllReviews></AllReviews>
+            </div>
+
+
+
+            <div>
+                <ReviewSection></ReviewSection>
+            </div>
         </div >
     );
 };
