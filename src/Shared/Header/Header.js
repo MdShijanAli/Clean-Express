@@ -1,10 +1,11 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import logo from '../../images/logoo.png';
 import { UserCircleIcon } from '@heroicons/react/24/solid'
 import { AuthContext } from '../../utilities/AuthProvider/AuthProvider';
 import toast from 'react-hot-toast';
 import HeaderTop from './HeaderTop/HeaderTop';
+import './Header.css';
 
 
 
@@ -31,9 +32,9 @@ const Header = () => {
                 <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
                     <div>
                         <div className="flex items-center justify-between py-3 md:py-2 md:block">
-                            <Link to='/'>
+                            <NavLink to='/'>
                                 <img className='h-20' src={logo} alt="" />
-                            </Link>
+                            </NavLink>
                             <div className="md:hidden">
                                 <button
                                     className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
@@ -79,23 +80,23 @@ const Header = () => {
                         >
                             <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
                                 <li className="text-white hover:text-indigo-200">
-                                    <Link to='/'>Home</Link>
+                                    <NavLink to='/'>Home</NavLink>
                                 </li>
                                 <li className="text-white hover:text-indigo-200">
-                                    <Link to='/services'>Services</Link>
+                                    <NavLink to='/services'>Services</NavLink>
                                 </li>
                                 <li className="text-white hover:text-indigo-200">
-                                    <Link to='/blog'>Blog</Link>
+                                    <NavLink to='/blogs'>Blog</NavLink>
                                 </li>
 
                                 <li className="text-white hover:text-indigo-200">
-                                    <Link to='/contact'>Contact</Link>
+                                    <NavLink to='/contact'>Contact</NavLink>
                                 </li>
 
                             </ul>
 
                             <div className="mt-3 space-y-2 md:hidden ">
-                                <Link to='/profile'>
+                                <NavLink to='/profile'>
                                     {
                                         user?.uid && <div>
 
@@ -105,28 +106,28 @@ const Header = () => {
                                         </div>
 
                                     }
-                                </Link>
+                                </NavLink>
 
                                 {
-                                    user?.uid ? <Link onClick={handleLogout}
+                                    user?.uid ? <NavLink onClick={handleLogout}
 
                                         className="inline-block w-full px-4 py-2 text-center text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
                                     >
                                         Sign Out
-                                    </Link> :
+                                    </NavLink> :
                                         <>
-                                            <Link
+                                            <NavLink
                                                 to='/login'
                                                 className="inline-block w-full px-4 py-2 text-center text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
                                             >
                                                 Login
-                                            </Link>
-                                            <Link
+                                            </NavLink>
+                                            <NavLink
                                                 to='/register'
                                                 className="inline-block w-full px-4 py-2 text-center text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
                                             >
                                                 Register
-                                            </Link>
+                                            </NavLink>
                                         </>
                                 }
                                 {/*                            <div className="form-control">
@@ -141,7 +142,7 @@ const Header = () => {
                     <div className="hidden md:flex">
 
 
-                        <Link to='/profile'>
+                        <NavLink to='/profile'>
                             {
                                 user?.uid && <div>
 
@@ -151,30 +152,30 @@ const Header = () => {
                                 </div>
 
                             }
-                        </Link>
+                        </NavLink>
 
 
 
                         {
-                            user?.uid ? <Link onClick={handleLogout}
+                            user?.uid ? <NavLink onClick={handleLogout}
 
                                 className="px-4 text-center py-2 text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
                             >
                                 Logout
-                            </Link> :
+                            </NavLink> :
                                 <>
-                                    <Link
+                                    <NavLink
                                         to='/login'
                                         className="px-4 mr-2 py-2 text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
                                     >
                                         Login
-                                    </Link>
-                                    <Link
+                                    </NavLink>
+                                    <NavLink
                                         to='/register'
                                         className="px-4 mr-2 py-2 text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
                                     >
                                         Register
-                                    </Link>
+                                    </NavLink>
                                 </>
 
                         }

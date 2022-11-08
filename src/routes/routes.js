@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../layouts/Main/Main";
 import Blog from "../Pages/Blog/Blog";
+import SingleBlog from "../Pages/Blog/SingleBlog/SingleBlog";
 import Contact from "../Pages/Contact/Contact";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Home from "../Pages/Home/Home";
@@ -35,8 +36,14 @@ export const routes = createBrowserRouter([
             },
 
             {
-                path: '/blog',
+                path: '/blogs',
                 element: <Blog></Blog>,
+                loader: () => fetch('https://assignment-11-server-phi.vercel.app/blogs')
+            },
+            {
+                path: '/blogs/:id',
+                element: <SingleBlog></SingleBlog>,
+                loader: ({ params }) => fetch(`https://assignment-11-server-phi.vercel.app/blogs/${params.id}`)
             },
             {
                 path: '/contact',

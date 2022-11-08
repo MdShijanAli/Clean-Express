@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
-import SideBarBottom from '../Services/Service/SidebarBottom/SideBarBottom';
-import SideBar from '../Services/SideBar/SideBar';
-import BlogPage from './BlogPage/BlogPage';
-import BlogSidebar from './BlogSidebar/BlogSidebar';
+import SideBarBottom from '../../Services/Service/SidebarBottom/SideBarBottom';
+import BlogSidebar from '../BlogSidebar/BlogSidebar';
+import SingleBlogDetails from '../SingleBlogDetails/SingleBlogDetails';
 
-const Blog = () => {
-    const blogs = useLoaderData();
+const SingleBlog = () => {
+    const [blogs, setBlogss] = useState([]);
+
+    useEffect(() => {
+        fetch('https://assignment-11-server-phi.vercel.app/blogs')
+            .then(res => res.json())
+            .then(data => setBlogss(data))
+
+    }, [])
+
+    const singleBlog = useLoaderData();
     return (
         <div className='grid md:grid-cols-4 md:mx-10 gap-10 items-center'>
             <div>
@@ -23,10 +31,10 @@ const Blog = () => {
                 </div>
             </div>
             <div className='col-span-3'>
-                <BlogPage blogs={blogs}></BlogPage>
+                <SingleBlogDetails singleBlog={singleBlog}></SingleBlogDetails>
             </div>
         </div>
     );
 };
 
-export default Blog;
+export default SingleBlog;

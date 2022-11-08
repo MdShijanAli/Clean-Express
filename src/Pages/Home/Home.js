@@ -59,7 +59,7 @@ const Home = () => {
                     </div>
 
                     <div className='mx-auto text-center my-10'>
-                        <Link to='/blog' className="inline-flex mx-auto items-center justify-center px-10 py-4 text-base font-semibold text-white transition-all duration-200 bg-cyan-600 hover:bg-cyan-800 focus:bg-orange-600" role="button">View All</Link>
+                        <Link to='/blogs' className="inline-flex mx-auto items-center justify-center px-10 py-4 text-base font-semibold text-white transition-all duration-200 bg-cyan-600 hover:bg-cyan-800 focus:bg-orange-600" role="button">View All</Link>
                     </div>
                 </div>
             </section>

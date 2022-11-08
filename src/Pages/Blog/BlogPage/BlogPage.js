@@ -1,25 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-const BlogSection = () => {
-    const [blogss, setBlogss] = useState([]);
-
-    useEffect(() => {
-        fetch('https://assignment-11-server-phi.vercel.app/blogs')
-            .then(res => res.json())
-            .then(data => setBlogss(data))
-
-    }, [])
-
-    console.log(blogss);
+const BlogPage = ({ blogs }) => {
     return (
-        <div className='mx-5 grid md:grid-cols-3 gap-5 md:mx-auto mt-8 lg:mt-16'>
+        <div className='mx-5 grid md:grid-cols-2 gap-10 md:mx-auto mt-8 lg:my-16'>
             {
-                blogss.slice(0, 3).map(blg => <div key={blg.id} className="overflow-hidden bg-white rounded shadow">
+                blogs.map(blg => <div key={blg.id} className="shadow-slate-400 shadow-2xl  overflow-hidden bg-white rounded">
                     <div className="p-5">
                         <div className="relative">
                             <Link to={`/blogs/${blg._id}`} className="block aspect-w-4 aspect-h-3">
-                                <img className="object-cover w-full h-52" src={blg?.photo} alt="" />
+                                <img className="object-cover w-full h-80" src={blg?.photo} alt="" />
                             </Link>
 
                             <div className="absolute top-4 left-4">
@@ -44,4 +34,4 @@ const BlogSection = () => {
     );
 };
 
-export default BlogSection;
+export default BlogPage;
