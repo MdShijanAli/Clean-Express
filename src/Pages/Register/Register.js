@@ -2,7 +2,7 @@ import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 
 import { Link, useNavigate } from 'react-router-dom';
-import logo from '../../images/logoo.png'
+
 
 import { AuthContext } from '../../utilities/AuthProvider/AuthProvider';
 
