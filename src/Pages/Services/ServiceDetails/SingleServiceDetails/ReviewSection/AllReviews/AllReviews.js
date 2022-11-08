@@ -1,8 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { AuthContext } from '../../../../../../utilities/AuthProvider/AuthProvider';
+import React, { useEffect, useState } from 'react';
 
 const AllReviews = () => {
-    const { user } = useContext(AuthContext);
+
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
         fetch('https://assignment-11-server-phi.vercel.app/reviews')

@@ -22,15 +22,7 @@ const SingleServiceDetails = ({ singleService }) => {
 
 
             <div className="overflow-x-auto w-full">
-                <table className="table w-full">  <thead>
-                    <tr>
-                        <th></th>
-                        <th>Name</th>
-                        <th>Job</th>
-
-
-                    </tr>
-                </thead>
+                <table className="table w-full">
 
                     <AllReviews></AllReviews>
                 </table>
