@@ -1,9 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import toast from 'react-hot-toast';
 import { AuthContext } from '../../utilities/AuthProvider/AuthProvider';
 
 const MyReviews = () => {
     const { user } = useContext(AuthContext);
+
+
+    // const [displayReviews, setDisplayReviews] = useState(myreviews)
     const [myreviews, setMyreviews] = useState([]);
 
 
@@ -13,9 +16,32 @@ const MyReviews = () => {
             .then(data => setMyreviews(data))
     }, [user?.email])
 
+    const handleDelete = myReview => {
+        const agree = window.confirm('Are You Sure Want to delete this Review?')
+        if (agree) {
+
+            // console.log('Deleting User with id:', myReview._id)
+            fetch(`http://localhost:5000/reviews/${myReview._id}`, {
+                method: "DELETE",
+
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    if (data.deletedCount > 0) {
+                        toast.success('User Deleted Successfully!!!');
+                        const remainingReviews = myreviews.filter(review => review._id !== myReview._id);
+                        setMyreviews(remainingReviews);
+                    }
+                })
+        }
+    }
+
     return (
         <div className='my-20'>
-            <h1 className='text-3xl font-bold text-center mb-5'>I have Total {myreviews.length} Reviews</h1>
+            {
+                myreviews.length > 0 ? <h1 className='text-3xl font-bold text-center mb-5'>I have Total {myreviews.length} Reviews</h1> : <h1 className='text-3xl font-bold text-center mb-5'>You Don't have Any Review</h1>
+            }
             {
                 myreviews.map(myReview => <div key={myReview._id} className="card w-1/2 flex items-center justify-between mx-auto my-5 p-5 card-side bg-base-100 shadow-xl">
                     <figure><img className='rounded-full' src={myReview.photo} alt="Movie" /></figure>
@@ -26,7 +52,7 @@ const MyReviews = () => {
                     </div>
                     <div className="card-actions grid grid-cols-1">
                         <button className="btn btn-primary">Update Review</button>
-                        <button className="btn btn-danger">Delete Review</button>
+                        <button onClick={() => handleDelete(myReview)} className="btn btn-danger">Delete Review</button>
                     </div>
                 </div>)
             }
