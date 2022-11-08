@@ -1,5 +1,6 @@
 import { ArrowLongRightIcon } from '@heroicons/react/24/solid';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import aboutImg from '../../../images/about0us.jpg';
 import wrench from '../../../images/repairing-service.png';
 import toolBox from '../../../images/tool-box.png';
@@ -46,7 +47,8 @@ const AboutUsSection = () => {
 
                     </div>
 
-                    <button className="btn btn-primary">Read More</button>
+                    <Link to='/services'>
+                        <button className="btn btn-primary">Read More</button></Link>
                 </div>
             </div>
         </div>
