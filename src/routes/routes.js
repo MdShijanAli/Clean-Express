@@ -8,6 +8,7 @@ import Login from "../Pages/Login/Login";
 import Profile from "../Pages/Profile/Profile";
 import Register from "../Pages/Register/Register";
 import ResetPass from "../Pages/ResetPass/ResetPass";
+import ServiceDetails from "../Pages/Services/ServiceDetails/ServiceDetails";
 import Services from "../Pages/Services/Services";
 import ThankYouPage from "../Pages/ThankYouPage/ThankYouPage";
 
@@ -26,6 +27,11 @@ export const routes = createBrowserRouter([
                 element: <Services></Services>,
                 loader: () => fetch('https://assignment-11-server-phi.vercel.app/services')
 
+            },
+            {
+                path: '/services/:id',
+                element: <ServiceDetails></ServiceDetails>,
+                loader: ({ params }) => fetch(`https://assignment-11-server-phi.vercel.app/services/${params.id}`)
             },
 
             {
