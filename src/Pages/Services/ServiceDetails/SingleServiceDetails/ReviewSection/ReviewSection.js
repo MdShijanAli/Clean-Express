@@ -7,6 +7,7 @@ const ReviewSection = ({ singleService }) => {
 
     const { user } = useContext(AuthContext);
 
+
     const serviceName = singleService.name;
     const serviceId = singleService._id;
     const serviceImg = singleService.photo;
@@ -41,7 +42,9 @@ const ReviewSection = ({ singleService }) => {
             .then(data => {
                 if (data.acknowledged) {
                     toast.success('Review Added Sucessfully!!! Please Reload this page to see Your Review');
+
                     event.target.reset();
+
                 }
                 console.log(data)
             })

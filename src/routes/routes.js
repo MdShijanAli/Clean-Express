@@ -8,6 +8,7 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import MyReviews from "../Pages/MyReviews/MyReviews";
+import UpdateReview from "../Pages/MyReviews/UpdateReview/UpdateReview";
 import MyServices from "../Pages/MyServices/MyServices";
 import Profile from "../Pages/Profile/Profile";
 import Register from "../Pages/Register/Register";
@@ -94,6 +95,11 @@ export const routes = createBrowserRouter([
             {
                 path: '/my-services',
                 element: <PriveteRoute><MyServices></MyServices></PriveteRoute>
+            },
+            {
+                path: '/update-review/:id',
+                element: <UpdateReview></UpdateReview>,
+                loader: ({ params }) => fetch(`https://assignment-11-server-phi.vercel.app/reviews/${params.id}`)
             }
         ]
     }

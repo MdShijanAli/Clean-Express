@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import logo from '../../images/logoo.png';
 import instagram from '../../images/instagram.png';
 import facebook from '../../images/facebook.png';
 import linkedin from '../../images/linkedin.png';
 import twitter from '../../images/twitter.png';
+import './Footer.css';
 
 const Footer = () => {
     return (
@@ -21,21 +22,21 @@ const Footer = () => {
                         <div className="items-center mt-8 xl:mt-0 xl:flex xl:justify-end xl:space-x-8">
                             <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 xl:justify-end">
                                 <li>
-                                    <Link to='/' className="text-sm text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"> Home </Link>
+                                    <NavLink to='/' className="text-sm text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"> Home </NavLink>
                                 </li>
 
                                 <li>
-                                    <Link to='/services' className="text-sm text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"> Services </Link>
+                                    <NavLink to='/services' className="text-sm text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"> Services </NavLink>
                                 </li>
 
                                 <li>
-                                    <Link to='/blog' className="text-sm text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"> Blog </Link>
+                                    <NavLink to='/blog' className="text-sm text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"> Blog </NavLink>
                                 </li>
 
 
 
                                 <li>
-                                    <Link to='/contact' className="text-sm text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"> Contact </Link>
+                                    <NavLink to='/contact' className="text-sm text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"> Contact </NavLink>
                                 </li>
 
 

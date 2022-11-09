@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 import useTitle from '../../hoocks/useTitle';
 import { AuthContext } from '../../utilities/AuthProvider/AuthProvider';
 
@@ -38,6 +39,7 @@ const MyReviews = () => {
         }
     }
 
+
     return (
         <div className='my-20'>
             {
@@ -45,14 +47,16 @@ const MyReviews = () => {
             }
             {
                 myreviews.map(myReview => <div key={myReview._id} className="card w-1/2 flex items-center justify-between mx-auto my-5 p-5 card-side bg-base-100 shadow-xl">
-                    <figure><img className='w-32 h-32 rounded-full' src={myReview.serviceImg} alt="Movie" /></figure>
-                    <div className="card-body">
-                        <h2 className="text-2xl text-blue-800 font-bold">Service Name: {myReview.serviceName}</h2>
+                    <div className='md:w-1/5'>
+                        <figure><img className='w-32 h-32 rounded-full' src={myReview.serviceImg} alt="Movie" /></figure>
+                    </div>
+                    <div className="card-body md:w-3/5">
+                        <h2 className="text-2xl font-bold">Service Name: <span className='text-blue-800'>{myReview.serviceName}</span></h2>
 
                         <h2 className='card-title'>My Review: {myReview.comment}</h2>
                     </div>
-                    <div className="card-actions grid grid-cols-1">
-                        <button className="btn btn-primary">Update Review</button>
+                    <div className="card-actions grid grid-cols-1 md:w-1/5">
+                        <Link to={`/update-review/${myReview._id}`}> <button className="btn btn-primary">Update Review</button></Link>
                         <button onClick={() => handleDelete(myReview)} className="btn btn-danger">Delete Review</button>
                     </div>
                 </div>)

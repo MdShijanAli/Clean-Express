@@ -7,7 +7,7 @@ const ServicesSection = () => {
     const [services, setServices] = useState([]);
 
     useEffect(() => {
-        fetch('https://assignment-11-server-phi.vercel.app/services')
+        fetch('https://assignment-11-server-phi.vercel.app/home-services')
             .then(res => res.json())
             .then(data => setServices(data))
 
@@ -18,7 +18,7 @@ const ServicesSection = () => {
         <PhotoProvider>
             <div className='mx-5 grid md:grid-cols-3 gap-5 md:mx-auto mt-8 lg:mt-16'>
                 {
-                    services.slice(0, 3).map(service => <div class="rounded-lg shadow-lg bg-white max-w-sm">
+                    services.map(service => <div class="rounded-lg shadow-lg bg-white max-w-sm">
 
                         <PhotoView src={service?.photo}>
                             <img class="rounded-t-lg w-full h-72" src={service?.photo} alt="" />
