@@ -1,5 +1,4 @@
 import { CheckIcon } from '@heroicons/react/24/solid';
-import buttonOutlined from '@material-tailwind/react/theme/components/button/buttonOutlined';
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../../utilities/AuthProvider/AuthProvider';
