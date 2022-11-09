@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useTitle from '../../hoocks/useTitle';
 import AboutUsSection from './AboutUsSection/AboutUsSection';
 import BlogSection from './BlogSection/BlogSection';
 import ServiceSection from './ServiceSection/ServiceSection';
@@ -7,6 +8,7 @@ import ServicesSection from './ServicesSection/ServicesSection';
 import Slider from './Slider/Slider';
 
 const Home = () => {
+    useTitle('Home');
     return (
         <div>
             <Slider></Slider>

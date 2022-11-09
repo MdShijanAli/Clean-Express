@@ -1,11 +1,13 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import useTitle from '../../hoocks/useTitle';
 import Service from './Service/Service';
 import SideBarBottom from './Service/SidebarBottom/SideBarBottom';
 import SideBar from './SideBar/SideBar';
 
 const Services = () => {
     const services = useLoaderData();
+    useTitle('Services');
     console.log(services);
     return (
         <div className='grid md:grid-cols-4 md:mx-10 gap-10 items-center'>

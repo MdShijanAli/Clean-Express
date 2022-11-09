@@ -1,12 +1,13 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import useTitle from '../../hoocks/useTitle';
 import SideBarBottom from '../Services/Service/SidebarBottom/SideBarBottom';
-import SideBar from '../Services/SideBar/SideBar';
 import BlogPage from './BlogPage/BlogPage';
 import BlogSidebar from './BlogSidebar/BlogSidebar';
 
 const Blog = () => {
     const blogs = useLoaderData();
+    useTitle('Blog')
     return (
         <div className='grid md:grid-cols-4 md:mx-10 gap-10 items-center'>
             <div>

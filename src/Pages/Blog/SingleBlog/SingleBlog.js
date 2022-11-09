@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import useTitle from '../../../hoocks/useTitle';
 import SideBarBottom from '../../Services/Service/SidebarBottom/SideBarBottom';
 import BlogSidebar from '../BlogSidebar/BlogSidebar';
 import SingleBlogDetails from '../SingleBlogDetails/SingleBlogDetails';
@@ -15,6 +16,7 @@ const SingleBlog = () => {
     }, [])
 
     const singleBlog = useLoaderData();
+    useTitle(`${singleBlog?.name}`)
     return (
         <div className='grid md:grid-cols-4 md:mx-10 gap-10 items-center'>
             <div>

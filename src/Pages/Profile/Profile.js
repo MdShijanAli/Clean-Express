@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import useTitle from '../../hoocks/useTitle';
 import { AuthContext } from '../../utilities/AuthProvider/AuthProvider';
 
 
 const Profile = () => {
+    useTitle('Profile')
     const { user } = useContext(AuthContext);
     return (
 

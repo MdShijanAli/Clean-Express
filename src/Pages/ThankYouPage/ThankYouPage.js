@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useTitle from '../../hoocks/useTitle';
 
 const ThankYouPage = () => {
+    useTitle('Thank You')
     return (
         <div className="flex items-center justify-center h-screen mx-5">
             <div className="p-1 rounded shadow-lg bg-gradient-to-r from-purple-500 via-green-500 to-blue-500">

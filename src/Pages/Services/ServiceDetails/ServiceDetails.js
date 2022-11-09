@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import useTitle from '../../../hoocks/useTitle';
 import SideBarBottom from '../Service/SidebarBottom/SideBarBottom';
 import SideBar from '../SideBar/SideBar';
 import SingleServiceDetails from './SingleServiceDetails/SingleServiceDetails';
@@ -13,6 +14,7 @@ const ServiceDetails = () => {
     }, []);
 
     const singleService = useLoaderData();
+    useTitle(`${singleService?.name}`)
     return (
         <div className='grid md:grid-cols-4 md:mx-10 gap-10 items-center'>
             <div>

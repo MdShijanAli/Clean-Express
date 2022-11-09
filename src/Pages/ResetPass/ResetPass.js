@@ -1,10 +1,11 @@
 import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
+import useTitle from '../../hoocks/useTitle';
 
 import { AuthContext } from '../../utilities/AuthProvider/AuthProvider';
 
 const ResetPass = () => {
-
+    useTitle('Reset Password')
     const { passResetEmail } = useContext(AuthContext)
     const [userEmail, setUserEmail] = useState('');
 

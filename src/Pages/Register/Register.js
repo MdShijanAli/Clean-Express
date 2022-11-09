@@ -2,6 +2,7 @@ import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 
 import { Link, useNavigate } from 'react-router-dom';
+import useTitle from '../../hoocks/useTitle';
 
 
 import { AuthContext } from '../../utilities/AuthProvider/AuthProvider';
@@ -9,7 +10,7 @@ import { AuthContext } from '../../utilities/AuthProvider/AuthProvider';
 
 const Register = () => {
     const [wrongPass, setWrongPass] = useState('');
-
+    useTitle('Register')
     const [error, setError] = useState('');
     const [showpass, setShowPass] = useState(false);
     const navigate = useNavigate();

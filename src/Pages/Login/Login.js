@@ -4,11 +4,12 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../utilities/AuthProvider/AuthProvider';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import loginImg from '../../images/login.jpg';
+import useTitle from '../../hoocks/useTitle';
 
 
 const Login = () => {
 
-
+    useTitle('Login')
 
     const navigate = useNavigate();
     const location = useLocation();
