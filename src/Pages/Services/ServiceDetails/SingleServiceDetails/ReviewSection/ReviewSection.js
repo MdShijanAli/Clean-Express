@@ -9,6 +9,7 @@ const ReviewSection = ({ singleService }) => {
 
     const serviceName = singleService.name;
     const serviceId = singleService._id;
+    const serviceImg = singleService.photo;
 
     const AddUser = event => {
         event.preventDefault();
@@ -24,7 +25,8 @@ const ReviewSection = ({ singleService }) => {
             comment,
             photo: user?.photoURL,
             serviceName,
-            serviceId
+            serviceId,
+            serviceImg
         }
         console.log(review);
 
@@ -38,7 +40,7 @@ const ReviewSection = ({ singleService }) => {
             .then(res => res.json())
             .then(data => {
                 if (data.acknowledged) {
-                    toast.success('Review Added Sucessfully!!!');
+                    toast.success('Review Added Sucessfully!!! Please Reload this page to see Your Review');
                     event.target.reset();
                 }
                 console.log(data)

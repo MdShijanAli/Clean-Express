@@ -45,12 +45,11 @@ const MyReviews = () => {
             }
             {
                 myreviews.map(myReview => <div key={myReview._id} className="card w-1/2 flex items-center justify-between mx-auto my-5 p-5 card-side bg-base-100 shadow-xl">
-                    <figure><img className='rounded-full' src={myReview.photo} alt="Movie" /></figure>
+                    <figure><img className='w-32 h-32 rounded-full' src={myReview.serviceImg} alt="Movie" /></figure>
                     <div className="card-body">
                         <h2 className="text-2xl text-blue-800 font-bold">Service Name: {myReview.serviceName}</h2>
-                        <h2 className="card-title">{myReview.name}</h2>
-                        <h2 className="text-md font-semibold mb-10">{myReview.email}</h2>
-                        <p>My Review: {myReview.comment}</p>
+
+                        <h2 className='card-title'>My Review: {myReview.comment}</h2>
                     </div>
                     <div className="card-actions grid grid-cols-1">
                         <button className="btn btn-primary">Update Review</button>

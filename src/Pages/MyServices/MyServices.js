@@ -1,24 +1,35 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
-import 'react-photo-view/dist/react-photo-view.css';
-const Service = () => {
-    const [services, setServices] = useState([]);
+import { Link } from 'react-router-dom';
+import useTitle from '../../hoocks/useTitle';
+import { AuthContext } from '../../utilities/AuthProvider/AuthProvider';
+
+const MyServices = () => {
+    const { user } = useContext(AuthContext);
+    useTitle('My Services');
+
+    const [myServices, setMyServices] = useState([]);
 
     useEffect(() => {
         fetch('https://assignment-11-server-phi.vercel.app/services')
             .then(res => res.json())
-            .then(data => setServices(data))
-
-    }, [])
-    console.log(services)
+            .then(data => {
+                const myService = data.filter(mys => mys.email === user.email)
+                setMyServices(myService)
+            })
+    }, [user?.email])
     return (
         <PhotoProvider>
-            <div className='mx-5 grid md:grid-cols-3 gap-5 md:mx-auto mt-8 lg:my-16'>
+            <div className='my-10'>
                 {
-                    services.map(service => <div class="rounded-lg shadow-lg bg-white max-w-sm">
+                    myServices.length > 0 ? <h1 className='text-3xl font-bold text-center my-10'>I have Total {myServices.length} Services</h1> : <h1 className='text-3xl font-bold text-center my-10'>You Don't have Any Services</h1>
+                }
+            </div>
+            <div className='md:w-4/5 grid md:grid-cols-3 gap-5 mx-auto my-20'>
+                {
+                    myServices.map(service => <div class="rounded-lg shadow-lg bg-white max-w-sm">
 
-                        <PhotoView>
+                        <PhotoView src={service?.photo}>
                             <img class="rounded-t-lg w-full h-72" src={service?.photo} alt="" />
                         </PhotoView>
 
@@ -43,4 +54,4 @@ const Service = () => {
     );
 };
 
-export default Service;
+export default MyServices;

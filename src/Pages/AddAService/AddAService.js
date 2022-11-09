@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
+import { AuthContext } from '../../utilities/AuthProvider/AuthProvider';
 
 const AddAService = () => {
+    const { user } = useContext(AuthContext);
+    const email = user.email;
+
     const AddService = event => {
         event.preventDefault();
         const form = event.target;
@@ -15,7 +19,9 @@ const AddAService = () => {
             name,
             photo,
             price,
-            description
+            description,
+            email
+
 
         }
         console.log(service);
@@ -41,7 +47,7 @@ const AddAService = () => {
 
             <div className="container mx-auto my-4 px-4 lg:px-20">
 
-                <div className="w-full p-8 my-4 md:px-12 lg:w-full   mr-auto rounded-2xl shadow-2xl">
+                <div className="w-full p-8 my-4 md:px-12 lg:w-full   mr-auto rounded-2xl shadow-gray-800 shadow-2xl">
                     <div>
                         <h1 className="font-bold text-center uppercase text-3xl">Add A service</h1>
                     </div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
-import 'react-photo-view/dist/react-photo-view.css';
+
 
 const ServicesSection = () => {
     const [services, setServices] = useState([]);
@@ -21,7 +21,7 @@ const ServicesSection = () => {
                     services.slice(0, 3).map(service => <div class="rounded-lg shadow-lg bg-white max-w-sm">
 
                         <PhotoView src={service?.photo}>
-                            <img class="rounded-t-lg" src={service?.photo} alt="" />
+                            <img class="rounded-t-lg w-full h-72" src={service?.photo} alt="" />
                         </PhotoView>
 
                         <div class="p-6">

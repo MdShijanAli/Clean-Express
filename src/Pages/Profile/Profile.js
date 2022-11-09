@@ -4,6 +4,8 @@ import useTitle from '../../hoocks/useTitle';
 import { AuthContext } from '../../utilities/AuthProvider/AuthProvider';
 
 
+
+
 const Profile = () => {
     useTitle('Profile')
     const { user } = useContext(AuthContext);
@@ -28,11 +30,19 @@ const Profile = () => {
                 }
             </div>
 
-            <div className='text-center my-10'>
-                <Link to='/' className="inline-flex items-center justify-center px-10 py-4 text-base font-semibold text-white transition-all duration-200 bg-cyan-600 hover:bg-cyan-800 focus:bg-orange-600" role="button">Go Home</Link>
+            <div className='flex gap-5 w-1/2 justify-around mx-auto'>
+                <div className=' my-10'>
+                    <Link to='/my-services' className="inline-flex items-center justify-center px-10 py-4 text-base font-semibold text-white transition-all duration-200 bg-blue-800 hover:bg-cyan-800 focus:bg-orange-600" role="button">My Services</Link>
 
+                </div>
+                <div className=' my-10'>
+                    <Link to='/' className="inline-flex items-center justify-center px-10 py-4 text-base font-semibold text-white transition-all duration-200 bg-cyan-600 hover:bg-cyan-800 focus:bg-orange-600" role="button">Go Home</Link>
+
+                </div>
             </div>
         </div>
+
+
 
 
     );

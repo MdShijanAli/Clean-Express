@@ -8,6 +8,7 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import MyReviews from "../Pages/MyReviews/MyReviews";
+import MyServices from "../Pages/MyServices/MyServices";
 import Profile from "../Pages/Profile/Profile";
 import Register from "../Pages/Register/Register";
 import ResetPass from "../Pages/ResetPass/ResetPass";
@@ -88,6 +89,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/add-a-service',
                 element: <AddAService></AddAService>
+            },
+            {
+                path: '/my-services',
+                element: <MyServices></MyServices>
             }
         ]
     }
