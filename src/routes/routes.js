@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../layouts/Main/Main";
+import AddAService from "../Pages/AddAService/AddAService";
 import Blog from "../Pages/Blog/Blog";
 import SingleBlog from "../Pages/Blog/SingleBlog/SingleBlog";
 import Contact from "../Pages/Contact/Contact";
@@ -83,6 +84,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/my-reviews',
                 element: <MyReviews></MyReviews>
+            },
+            {
+                path: '/add-a-service',
+                element: <AddAService></AddAService>
             }
         ]
     }

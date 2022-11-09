@@ -102,6 +102,12 @@ const Header = () => {
                                     }
                                 </NavLink>
 
+                                <NavLink className="text-white hover:text-indigo-200 " to='/add-a-service'>
+                                    {
+                                        user?.uid && <p className='my-8'>Add Service</p>
+                                    }
+                                </NavLink>
+
                                 <NavLink to='/profile'>
                                     {
                                         user?.uid && <div>
@@ -150,6 +156,12 @@ const Header = () => {
                         <NavLink className="text-white hover:text-indigo-200" to='/my-reviews'>
                             {
                                 user?.uid && <p>My-Reviews</p>
+                            }
+                        </NavLink>
+
+                        <NavLink className="text-white hover:text-indigo-200" to='/add-a-service'>
+                            {
+                                user?.uid && <p>Add Service</p>
                             }
                         </NavLink>
 
