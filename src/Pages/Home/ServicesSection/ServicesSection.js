@@ -20,7 +20,7 @@ const ServicesSection = () => {
                 {
                     services.slice(0, 3).map(service => <div class="rounded-lg shadow-lg bg-white max-w-sm">
 
-                        <PhotoView>
+                        <PhotoView src={service?.photo}>
                             <img class="rounded-t-lg" src={service?.photo} alt="" />
                         </PhotoView>
 
