@@ -15,6 +15,7 @@ import ResetPass from "../Pages/ResetPass/ResetPass";
 import ServiceDetails from "../Pages/Services/ServiceDetails/ServiceDetails";
 import Services from "../Pages/Services/Services";
 import ThankYouPage from "../Pages/ThankYouPage/ThankYouPage";
+import PriveteRoute from "./PrivateRoute/PriveteRoute";
 
 
 export const routes = createBrowserRouter([
@@ -74,7 +75,7 @@ export const routes = createBrowserRouter([
 
             {
                 path: '/profile',
-                element: <Profile></Profile>
+                element: <PriveteRoute><Profile></Profile></PriveteRoute>
             },
 
 
@@ -84,15 +85,15 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/my-reviews',
-                element: <MyReviews></MyReviews>
+                element: <PriveteRoute><MyReviews></MyReviews></PriveteRoute>
             },
             {
                 path: '/add-a-service',
-                element: <AddAService></AddAService>
+                element: <PriveteRoute><AddAService></AddAService></PriveteRoute>
             },
             {
                 path: '/my-services',
-                element: <MyServices></MyServices>
+                element: <PriveteRoute><MyServices></MyServices></PriveteRoute>
             }
         ]
     }
