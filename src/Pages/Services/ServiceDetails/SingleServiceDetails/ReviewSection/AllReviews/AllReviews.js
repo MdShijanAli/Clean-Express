@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from 'react';
 
-const AllReviews = () => {
+const AllReviews = ({ singleService }) => {
 
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
         fetch('https://assignment-11-server-phi.vercel.app/reviews')
             .then(res => res.json())
-            .then(data => setReviews(data))
-    }, [])
+            .then(data => {
+                const showReview = data.filter(shw => shw.serviceId === singleService._id)
+
+                setReviews(showReview);
+            })
+    }, [singleService._id])
     console.log(reviews)
     return (
         <div className='my-20'>

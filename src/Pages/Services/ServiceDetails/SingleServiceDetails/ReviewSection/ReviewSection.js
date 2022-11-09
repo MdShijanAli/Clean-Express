@@ -8,6 +8,7 @@ const ReviewSection = ({ singleService }) => {
     const { user } = useContext(AuthContext);
 
     const serviceName = singleService.name;
+    const serviceId = singleService._id;
 
     const AddUser = event => {
         event.preventDefault();
@@ -22,7 +23,8 @@ const ReviewSection = ({ singleService }) => {
             email,
             comment,
             photo: user?.photoURL,
-            serviceName
+            serviceName,
+            serviceId
         }
         console.log(review);
 

@@ -24,7 +24,7 @@ const SingleServiceDetails = ({ singleService }) => {
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
 
-                    <AllReviews></AllReviews>
+                    <AllReviews singleService={singleService}></AllReviews>
                 </table>
             </div>
 
