@@ -21,7 +21,7 @@ const MyReviews = () => {
         if (agree) {
 
             // console.log('Deleting User with id:', myReview._id)
-            fetch(`http://localhost:5000/reviews/${myReview._id}`, {
+            fetch(`https://assignment-11-server-phi.vercel.app/reviews/${myReview._id}`, {
                 method: "DELETE",
 
             })
