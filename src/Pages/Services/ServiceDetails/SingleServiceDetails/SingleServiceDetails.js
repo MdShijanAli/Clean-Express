@@ -31,7 +31,7 @@ const SingleServiceDetails = ({ singleService }) => {
 
 
             <div>
-                <ReviewSection></ReviewSection>
+                <ReviewSection singleService={singleService}></ReviewSection>
             </div>
         </div >
     );

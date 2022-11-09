@@ -8,6 +8,7 @@ const AllReviews = () => {
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [])
+    console.log(reviews)
     return (
         <div className='my-20'>
             <h1 className='text-2xl font-semibold'>Total Reviews: {reviews.length}</h1>

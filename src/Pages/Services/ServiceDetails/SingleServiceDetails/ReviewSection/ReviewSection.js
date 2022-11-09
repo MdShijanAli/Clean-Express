@@ -3,11 +3,11 @@ import toast from 'react-hot-toast';
 import { AuthContext } from '../../../../../utilities/AuthProvider/AuthProvider';
 
 
-const ReviewSection = () => {
+const ReviewSection = ({ singleService }) => {
 
     const { user } = useContext(AuthContext);
 
-
+    const serviceName = singleService.name;
 
     const AddUser = event => {
         event.preventDefault();
@@ -21,7 +21,8 @@ const ReviewSection = () => {
             name,
             email,
             comment,
-            photo: user?.photoURL
+            photo: user?.photoURL,
+            serviceName
         }
         console.log(review);
 
