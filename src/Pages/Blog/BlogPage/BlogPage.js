@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const BlogPage = ({ blogs }) => {
     return (
-        <div className='mx-5 grid md:grid-cols-2 gap-10 md:mx-auto  '>
+        <div className='mx-5 grid md:grid-cols-2 gap-10 md:mx-auto '>
             {
                 blogs.map(blg => <div key={blg.id} className="shadow-slate-400 shadow-2xl  overflow-hidden bg-white rounded">
                     <div className="p-5">
