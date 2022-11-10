@@ -26,7 +26,7 @@ const MyReviews = () => {
                 return res.json()
             })
             .then(data => {
-                // console.log('inside data', data)
+
                 setMyreviews(data)
             })
     }, [user?.email, logOut])

@@ -32,10 +32,10 @@ const Login = () => {
                 form.reset();
                 setError('');
 
+
                 const currentUser = {
                     email: user.email
                 }
-                console.log('current user', currentUser)
 
                 fetch('https://assignment-11-server-phi.vercel.app/jwt', {
                     method: 'POST',
@@ -48,10 +48,10 @@ const Login = () => {
                     .then(data => {
                         console.log(data)
                         localStorage.setItem('clean-express-token', data.token)
-                        navigate(from, { replace: true });
+
                     })
 
-
+                navigate(from, { replace: true });
 
                 console.log('Login User from form', user)
             })
@@ -66,9 +66,29 @@ const Login = () => {
         providerLogin(googleProvider)
             .then(result => {
                 const user = result.user;
+                console.log('New User From Google', user)
+
+                const currentUser = {
+                    email: user.email
+                }
+
+                fetch('https://assignment-11-server-phi.vercel.app/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data)
+                        localStorage.setItem('clean-express-token', data.token)
+
+                    })
+
 
                 navigate(from, { replace: true });
-                console.log('New User From Google', user)
+
             })
             .catch(error => {
                 console.error('Google User SIgn In error', error);

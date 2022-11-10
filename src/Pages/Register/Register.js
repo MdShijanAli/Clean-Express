@@ -1,8 +1,9 @@
-import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
+import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 
 import { Link, useNavigate } from 'react-router-dom';
 import useTitle from '../../hoocks/useTitle';
+
 
 
 import { AuthContext } from '../../utilities/AuthProvider/AuthProvider';
@@ -44,8 +45,27 @@ const Register = () => {
                 const user = result.user;
                 setError('');
                 handleUpdateProfile(name, photoURL);
+
+                const currentUser = {
+                    email: user.email
+                }
+
+                fetch('https://assignment-11-server-phi.vercel.app/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data)
+                        localStorage.setItem('clean-express-token', data.token)
+
+                    })
+
+                navigate('/');
                 form.reset();
-                navigate('/')
                 console.log('New Created User', user);
             })
             .catch(error => {
@@ -84,7 +104,27 @@ const Register = () => {
             .then(result => {
                 const user = result.user;
                 console.log('New User From Google', user);
+
+                const currentUser = {
+                    email: user.email
+                }
+
+                fetch('https://assignment-11-server-phi.vercel.app/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data)
+                        localStorage.setItem('clean-express-token', data.token)
+
+                    })
+
                 navigate('/');
+
             })
             .catch(error => {
                 console.error('Google User SIgn In error', error)
