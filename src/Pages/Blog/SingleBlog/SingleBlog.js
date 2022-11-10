@@ -29,7 +29,7 @@ const SingleBlog = () => {
                     }
 
                 </div>
-                <div className='mx-5 md:mx-5'>
+                <div className='mx-5 md:mx-0 mb-10'>
                     <SideBarBottom></SideBarBottom>
                 </div>
             </div>
