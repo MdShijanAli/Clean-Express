@@ -22,7 +22,7 @@ const HeaderTop = () => {
                 <h3>FREELANCERSHIJAN@GMAIL.COM</h3>
             </div>
 
-            <div className='flex gap-2'>
+            <div className='flex justify-center gap-2'>
                 <a href='https://www.facebook.com/mdshijanali135' target='_blank'><img className='w-6 h-6' src={facebook} alt="" /></a>
                 <a href='https://twitter.com/shijan135' target='_blank'><img className='w-6 h-6' src={twitter} alt="" /></a>
                 <a href='https://www.instagram.com/OmikeShop/' target='_blank'><img className='w-6 h-6' src={instagram} alt="" /></a>
