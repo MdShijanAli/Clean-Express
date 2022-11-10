@@ -1,11 +1,65 @@
 # Website Name
 Service Express
 
+# Client Side Live Link
+[Client side Live Link](https://assignment-11-39630.web.app)
+
+# Client Side Repository Link
+[Client side Repository Link](https://github.com/Porgramming-Hero-web-course/b6a11-service-review-client-side-freelancershijan)
+
 # Server Side Live Link
 [Server Side Live Link]( https://assignment-11-server-phi.vercel.app)
 
-# Client Side Live Link
-[Client side Live Link]()
+# Server Side Repository Link
+[Server Side Repository Link]( https://github.com/Porgramming-Hero-web-course/b6a11-service-review-server-side-freelancershijan)
+
+
+# Project Features:
+1. `React Router`
+2. `Tailwind Css`
+3. `Node js`
+4. `Express Js`
+5. `MongoDB`
+6. `JWT Token`
+7. `Slider`
+8. `React-Photo-View`
+9. `Spinner`
+10. `Authentication`
+11. `Environment`
+12. `React hot toast`
+
+
+# Working Steps:
+
+1. create `react app`
+2. create need components and pages
+3. install `firebase`, `tailwindcss`, `react router dom`, `react hot toast`, `react-photo-view` etc
+4. make responsive header using `tailwindcss`
+5. make home page banner
+6. make home page services section
+7. make home page blog section
+8. make footer
+9. make services page
+10. make blog page
+11. make review form
+12. post review form data to `server` to `mondoDB`
+13. make review show section
+14. make my review page
+15. make add service section
+16. make contact page
+17. login and registration system with `authentication`
+18. implement `JWT` verification for my review page
+19. make responsive
+20. make privet routes
+21. add `spinner`
+22. install `firebase`
+23. deploy firebase
+24. commit `github` repository
+25. Done
+
+
+
+
 
 
 # Getting Started with Create React App
