@@ -1,8 +1,8 @@
-import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
+import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../utilities/AuthProvider/AuthProvider';
-import { FaGithub, FaGoogle } from 'react-icons/fa';
+import { FaGoogle } from 'react-icons/fa';
 import loginImg from '../../images/login.jpg';
 import useTitle from '../../hoocks/useTitle';
 
@@ -31,7 +31,27 @@ const Login = () => {
                 const user = result.user;
                 form.reset();
                 setError('');
-                navigate(from, { replace: true });
+
+                const currentUser = {
+                    email: user.email
+                }
+                console.log('current user', currentUser)
+
+                fetch('https://assignment-11-server-phi.vercel.app/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data)
+                        localStorage.setItem('clean-express-token', data.token)
+                        navigate(from, { replace: true });
+                    })
+
+
 
                 console.log('Login User from form', user)
             })

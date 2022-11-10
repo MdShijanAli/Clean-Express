@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
 import { useLoaderData, useNavigate } from 'react-router-dom';
+import useTitle from '../../../hoocks/useTitle';
 
 const UpdateReview = () => {
+    useTitle('Update Review')
     const storedReview = useLoaderData();
-    // console.log(storedReview._id)
+
     const [review, setReview] = useState(storedReview);
     const navigate = useNavigate();
 

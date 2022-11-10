@@ -5,6 +5,7 @@ import facebook from '../../../images/facebook.png';
 import linkedin from '../../../images/linkedin.png';
 import twitter from '../../../images/twitter.png';
 
+
 const HeaderTop = () => {
     return (
         <div className='w-full mx-auto flex justify-evenly py-2 gap-5 bg-gray-300'>
@@ -22,10 +23,10 @@ const HeaderTop = () => {
             </div>
 
             <div className='flex gap-2'>
-                <img className='w-6 h-6' src={facebook} alt="" />
-                <img className='w-6 h-6' src={twitter} alt="" />
-                <img className='w-6 h-6' src={instagram} alt="" />
-                <img className='w-6 h-6' src={linkedin} alt="" />
+                <a href='https://www.facebook.com/mdshijanali135' target='_blank'><img className='w-6 h-6' src={facebook} alt="" /></a>
+                <a href='https://twitter.com/shijan135' target='_blank'><img className='w-6 h-6' src={twitter} alt="" /></a>
+                <a href='https://www.instagram.com/OmikeShop/' target='_blank'><img className='w-6 h-6' src={instagram} alt="" /></a>
+                <a href='https://www.linkedin.com/in/freelancershijan/' target='_blank'><img className='w-6 h-6' src={linkedin} alt="" /></a>
             </div>
 
 

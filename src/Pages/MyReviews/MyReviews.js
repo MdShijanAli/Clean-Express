@@ -5,7 +5,7 @@ import useTitle from '../../hoocks/useTitle';
 import { AuthContext } from '../../utilities/AuthProvider/AuthProvider';
 
 const MyReviews = () => {
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
 
     useTitle('My Reviews')
     // const [displayReviews, setDisplayReviews] = useState(myreviews)
@@ -13,10 +13,23 @@ const MyReviews = () => {
 
 
     useEffect(() => {
-        fetch(`https://assignment-11-server-phi.vercel.app/reviews?email=${user?.email}`)
-            .then(res => res.json())
-            .then(data => setMyreviews(data))
-    }, [user?.email])
+        fetch(`https://assignment-11-server-phi.vercel.app/reviews?email=${user?.email}`, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('clean-express-token')}`
+            }
+        })
+            .then(res => {
+                if (res.status === 401 || res.status === 403) {
+
+                    return logOut()
+                }
+                return res.json()
+            })
+            .then(data => {
+                // console.log('inside data', data)
+                setMyreviews(data)
+            })
+    }, [user?.email, logOut])
 
     const handleDelete = myReview => {
         const agree = window.confirm('Are You Sure Want to delete this Review?')
@@ -53,7 +66,7 @@ const MyReviews = () => {
                     <div className="card-body md:w-3/5">
                         <h2 className="text-2xl font-bold">Service Name: <span className='text-blue-800'>{myReview.serviceName}</span></h2>
 
-                        <h2 className='card-title'>My Review: {myReview.comment}</h2>
+                        <h2 className='text-md'><span className='font-bold'>My Review:</span> {myReview.comment}</h2>
                     </div>
                     <div className="card-actions grid grid-cols-1 md:w-1/5">
                         <Link to={`/update-review/${myReview._id}`}> <button className="btn btn-primary">Update Review</button></Link>

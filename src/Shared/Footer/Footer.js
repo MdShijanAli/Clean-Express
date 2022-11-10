@@ -46,10 +46,10 @@ const Footer = () => {
 
 
                             <div className='flex gap-2 items-center justify-center'>
-                                <img className='w-10 h-10' src={facebook} alt="" />
-                                <img className='w-10 h-10' src={twitter} alt="" />
-                                <img className='w-10 h-10' src={instagram} alt="" />
-                                <img className='w-10 h-10' src={linkedin} alt="" />
+                                <a href='https://www.facebook.com/mdshijanali135' target='_blank'><img className='w-10 h-10' src={facebook} alt="" /></a>
+                                <a href='https://twitter.com/shijan135' target='_blank'><img className='w-10 h-10' src={twitter} alt="" /></a>
+                                <a href='https://www.instagram.com/OmikeShop/' target='_blank'><img className='w-10 h-10' src={instagram} alt="" /></a>
+                                <a href='https://www.linkedin.com/in/freelancershijan/' target='_blank'><img className='w-10 h-10' src={linkedin} alt="" /></a>
                             </div>
                         </div>
                     </div>

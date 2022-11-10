@@ -36,6 +36,7 @@ const AuthProvider = ({ children }) => {
 
     const logOut = () => {
         setLoading(true);
+        localStorage.removeItem('clean-express-token');
         return signOut(auth);
 
     }
