@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import useTitle from '../../hoocks/useTitle';
 import AboutUsSection from './AboutUsSection/AboutUsSection';
 import BlogSection from './BlogSection/BlogSection';
+import Newsletter from './Newsletter/Newsletter';
 import ServiceSection from './ServiceSection/ServiceSection';
 import ServicesSection from './ServicesSection/ServicesSection';
 import Slider from './Slider/Slider';
@@ -13,11 +14,6 @@ const Home = () => {
         <div>
             <Slider></Slider>
             <ServiceSection></ServiceSection>
-            <AboutUsSection></AboutUsSection>
-
-
-
-
 
 
             <section className="py-10 bg-gray-50 mt-10">
@@ -42,6 +38,7 @@ const Home = () => {
                 </div>
             </section>
 
+            <AboutUsSection></AboutUsSection>
 
 
             <section className="py-10 bg-gray-50 ">
@@ -65,6 +62,8 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+
+            <Newsletter></Newsletter>
 
         </div>
     );
