@@ -54,12 +54,12 @@ const MyReviews = () => {
 
 
     return (
-        <div className='my-20'>
+        <div className='my-20 mx-5 md:mx-0 '>
             {
                 myreviews.length > 0 ? <h1 className='text-3xl font-bold text-center mb-5'>I have Total {myreviews.length} Reviews</h1> : <h1 className='text-3xl font-bold text-center mb-5'>You Don't have Any Review</h1>
             }
             {
-                myreviews.map(myReview => <div key={myReview._id} className="card w-1/2 flex items-center justify-between mx-auto my-5 p-5 card-side bg-base-100 shadow-xl">
+                myreviews.map(myReview => <div key={myReview._id} className="card md:w-1/2 flex items-center justify-between mx-auto my-5 p-5  bg-base-100 shadow-xl">
                     <div className='md:w-1/5'>
                         <figure><img className='w-32 h-32 rounded-full' src={myReview.serviceImg} alt="Movie" /></figure>
                     </div>
@@ -68,7 +68,7 @@ const MyReviews = () => {
 
                         <h2 className='text-md'><span className='font-bold'>My Review:</span> {myReview.comment}</h2>
                     </div>
-                    <div className="card-actions grid grid-cols-1 md:w-1/5">
+                    <div className="card-actions flex">
                         <Link to={`/update-review/${myReview._id}`}> <button className="btn btn-primary">Update Review</button></Link>
                         <button onClick={() => handleDelete(myReview)} className="btn btn-danger">Delete Review</button>
                     </div>

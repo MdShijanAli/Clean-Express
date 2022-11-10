@@ -13,9 +13,9 @@ const BlogSection = () => {
 
     console.log(blogss);
     return (
-        <div className='mx-5 grid md:grid-cols-3 gap-5 md:mx-auto mt-8 lg:mt-16'>
+        <div className='mx-5 md:grid md:grid-cols-3 md:gap-5 md:mx-auto mt-8 '>
             {
-                blogss.map(blg => <div key={blg.id} className="overflow-hidden bg-white rounded shadow">
+                blogss.map(blg => <div key={blg.id} className="overflow-hidden my-10  bg-white rounded shadow">
                     <div className="p-5">
                         <div className="relative">
                             <Link to={`/blogs/${blg._id}`} className="block aspect-w-4 aspect-h-3">

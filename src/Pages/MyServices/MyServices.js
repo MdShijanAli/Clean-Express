@@ -25,9 +25,9 @@ const MyServices = () => {
                     myServices.length > 0 ? <h1 className='text-3xl font-bold text-center my-10'>I have Total {myServices.length} Services</h1> : <h1 className='text-3xl font-bold text-center my-10'>You Don't have Any Services</h1>
                 }
             </div>
-            <div className='md:w-4/5 grid md:grid-cols-3 gap-5 mx-auto my-20'>
+            <div className='md:w-4/5 grid md:grid-cols-3 gap-5 md:mx-auto my-20 mx-5'>
                 {
-                    myServices.map(service => <div class="rounded-lg shadow-lg bg-white max-w-sm">
+                    myServices.map(service => <div class="rounded-lg shadow-lg bg-white ">
 
                         <PhotoView src={service?.photo}>
                             <img class="rounded-t-lg w-full h-72" src={service?.photo} alt="" />

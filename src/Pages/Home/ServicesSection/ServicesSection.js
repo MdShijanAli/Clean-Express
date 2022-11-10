@@ -16,9 +16,9 @@ const ServicesSection = () => {
     return (
 
         <PhotoProvider>
-            <div className='mx-5 grid md:grid-cols-3 gap-5 md:mx-auto mt-8 lg:mt-16'>
+            <div className='mx-5 md:grid md:grid-cols-3 md:gap-5 md:mx-auto mt-8 lg:mt-16'>
                 {
-                    services.map(service => <div class="rounded-lg shadow-lg bg-white max-w-sm">
+                    services.map(service => <div class="rounded-lg shadow-lg my-10 bg-white ">
 
                         <PhotoView src={service?.photo}>
                             <img class="rounded-t-lg w-full h-72" src={service?.photo} alt="" />

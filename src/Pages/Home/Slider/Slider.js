@@ -12,8 +12,8 @@ const Slider = () => {
             <div id="slide1" className="carousel-item relative w-full">
                 <img src={slider1} alt='slider1' className="w-full brightness-50" />
 
-                <div className="absolute flex justify-start gap-3 transform -translate-y-1/2 left-24  top-1/4">
-                    <h1 className='text-7xl font-bold text-white'>
+                <div className="absolute md:flex md:justify-start  gap-3 transform -translate-y-1/2 left-24  top-1/4">
+                    <h1 className='md:text-7xl text-5xl font-bold text-white'>
                         We are expert <br /> in Cleaning
                     </h1>
 
@@ -24,7 +24,7 @@ const Slider = () => {
                     </p>
 
                 </div>
-                <div className="absolute flex justify-start gap-3 transform -translate-y-1/2 left-24 w-2/5 top-3/4">
+                <div className="absolute md:flex md:justify-start md:gap-3  mx-auto transform -translate-y-1/2 left-24 md:w-2/5 top-3/4">
                     <Link to='/services'>
                         <button class="bg-sky-500 text-white active:bg-sky-600 font-bold uppercase text-sm px-8 py-4 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button"
                         >
@@ -49,7 +49,7 @@ const Slider = () => {
                 <img src={slider2} alt='slider2' className="w-full brightness-50" />
 
                 <div className="absolute flex justify-start gap-3 transform -translate-y-1/2 left-24  top-1/4">
-                    <h1 className='text-7xl font-bold text-white'>
+                    <h1 className='md:text-7xl text-5xl font-bold text-white'>
                         Affordable <br /> Price For Car <br /> Servicing
                     </h1>
 
@@ -60,7 +60,7 @@ const Slider = () => {
                     </p>
 
                 </div>
-                <div className="absolute flex justify-start gap-3 transform -translate-y-1/2 left-24 w-2/5 top-3/4">
+                <div className="absolute md:flex md:justify-start md:gap-3  mx-auto transform -translate-y-1/2 left-24 md:w-2/5 top-3/4">
                     <Link to='/services'>
                         <button class="bg-sky-500 text-white active:bg-sky-600 font-bold uppercase text-sm px-8 py-4 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button"
                         >
@@ -84,7 +84,7 @@ const Slider = () => {
             <div id="slide3" className="carousel-item relative w-full">
                 <img src={slider3} alt='slider3' className="w-full brightness-50" />
                 <div className="absolute flex justify-start gap-3 transform -translate-y-1/2 left-24  top-1/4">
-                    <h1 className='text-7xl font-bold text-white'>
+                    <h1 className='md:text-7xl text-5xl font-bold text-white'>
                         Affordable <br /> Price For Car <br /> Servicing
                     </h1>
 
@@ -95,7 +95,7 @@ const Slider = () => {
                     </p>
 
                 </div>
-                <div className="absolute flex justify-start gap-3 transform -translate-y-1/2 left-24 w-2/5 top-3/4">
+                <div className="absolute md:flex md:justify-start md:gap-3  mx-auto transform -translate-y-1/2 left-24 md:w-2/5 top-3/4">
                     <Link to='/services'>
                         <button class="bg-sky-500 text-white active:bg-sky-600 font-bold uppercase text-sm px-8 py-4 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button"
                         >
@@ -119,7 +119,7 @@ const Slider = () => {
             <div id="slide4" className="carousel-item relative w-full">
                 <img src={slider4} alt='slider4' className="w-full brightness-50" />
                 <div className="absolute flex justify-start gap-3 transform -translate-y-1/2 left-24  top-1/4">
-                    <h1 className='text-7xl font-bold text-white'>
+                    <h1 className='md:text-7xl text-5xl font-bold text-white'>
                         Affordable <br /> Price For Car <br /> Servicing
                     </h1>
 
@@ -130,7 +130,7 @@ const Slider = () => {
                     </p>
 
                 </div>
-                <div className="absolute flex justify-start gap-3 transform -translate-y-1/2 left-24 w-2/5 top-3/4">
+                <div className="absolute md:flex md:justify-start md:gap-3  mx-auto transform -translate-y-1/2 left-24 md:w-2/5 top-3/4">
                     <Link to='/services'>
                         <button class="bg-sky-500 text-white active:bg-sky-600 font-bold uppercase text-sm px-8 py-4 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button"
                         >

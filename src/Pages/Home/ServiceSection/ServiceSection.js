@@ -8,8 +8,8 @@ import { CheckIcon } from '@heroicons/react/24/solid';
 
 const ServiceSection = () => {
     return (
-        <div className='grid grid-cols-4 mx-32 gap-5  my-20'>
-            <div className='bg-gray-800 text-white  pt-16 rounded-t-3xl rounded-br-3xl'>
+        <div className='md:grid md:grid-cols-4 mx-5 md:mx-32 md:gap-5 my-20'>
+            <div className='bg-gray-800 my-10 text-white  pt-16 rounded-t-3xl rounded-br-3xl'>
                 <h1 className='text-2xl font-semibold px-10 mb-5'>
                     Professional <br />
                     Handy Services
@@ -25,10 +25,10 @@ const ServiceSection = () => {
 
 
 
-            <div className='shadow-slate-300 shadow-2xl rounded-t-3xl'>
-                <div className='bg-slate-200 px-10 rounded-br-full'>
-                    <h1 className='text-2xl py-10  font-semibold'>
-                        Management Tenants
+            <div className='shadow-slate-300 my-10 shadow-2xl rounded-t-3xl'>
+                <div className='bg-slate-200 pt-10 px-10 rounded-br-full'>
+                    <h1 className='text-2xl pb-5 font-semibold'>
+                        Management lick
                     </h1>
                     <div className='flex justify-between items-center pb-10'>
                         <img className='w-16 h-16' src={leak} alt="" />
@@ -37,7 +37,7 @@ const ServiceSection = () => {
 
                 </div>
 
-                <div className='px-10  my-5'>
+                <div className='px-10 pb-10  my-5'>
                     <div className='flex gap-3'>
                         <CheckIcon className='w-6 h-6 text-red-700 font-semibold'></CheckIcon>
                         <p className='font-semibold'>
@@ -65,9 +65,9 @@ const ServiceSection = () => {
             </div>
 
 
-            <div className='shadow-slate-300 shadow-2xl rounded-t-3xl'>
-                <div className='bg-slate-200 px-10 rounded-t-3xl rounded-br-full'>
-                    <h1 className='text-2xl py-10 font-semibold'>
+            <div className='shadow-slate-300 my-10 shadow-2xl rounded-t-3xl'>
+                <div className='bg-slate-200 pt-10 px-10 rounded-t-3xl rounded-br-full'>
+                    <h1 className='text-2xl pb-5  font-semibold'>
                         Leakage Detection
                     </h1>
                     <div className='flex justify-between items-center pb-10'>
@@ -77,7 +77,7 @@ const ServiceSection = () => {
 
                 </div>
 
-                <div className='px-10  my-5'>
+                <div className='px-10 pb-10 my-5'>
                     <div className='flex gap-3'>
                         <CheckIcon className='w-6 h-6 text-red-700 font-semibold'></CheckIcon>
                         <p className='font-semibold'>
@@ -106,9 +106,9 @@ const ServiceSection = () => {
             </div>
 
 
-            <div className='shadow-slate-300 shadow-2xl rounded-t-3xl'>
-                <div className='bg-slate-200 px-10 rounded-t-3xl rounded-br-full'>
-                    <h1 className='text-2xl py-10 font-semibold'>
+            <div className='shadow-slate-300 my-10 shadow-2xl rounded-t-3xl'>
+                <div className='bg-slate-200 pt-10 px-10 rounded-t-3xl rounded-br-full'>
+                    <h1 className='text-2xl pb-5 font-semibold'>
                         Residential Services
                     </h1>
                     <div className='flex justify-between items-center pb-10'>
@@ -118,7 +118,7 @@ const ServiceSection = () => {
 
                 </div>
 
-                <div className='px-10  my-5'>
+                <div className='px-10 pb-10 my-5'>
                     <div className='flex gap-3'>
                         <CheckIcon className='w-6 h-6 text-red-700 font-semibold'></CheckIcon>
                         <p className='font-semibold'>

@@ -8,7 +8,7 @@ import twitter from '../../../images/twitter.png';
 
 const HeaderTop = () => {
     return (
-        <div className='w-full mx-auto flex justify-evenly py-2 gap-5 bg-gray-300'>
+        <div className='w-full mx-auto md:flex justify-evenly py-2 gap-5 bg-gray-300'>
             <div className='flex gap-2'>
                 <ClockIcon className='h-6 w-6 text-black-500'></ClockIcon>
                 <h3>24 HOUR SERVICES - 7 DAYS A WEEK</h3>
