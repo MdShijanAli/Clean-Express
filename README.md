@@ -2,7 +2,7 @@
 ### `Clean Express`
 
 # Client Side Live Link
-[Client side Live Link](https://assignment-11-39630.web.app)
+[Client side Live Link](https://clean-express-shijan-ali.web.app/)
 
 # Client Side Repository Link
 [Client side Repository Link](https://github.com/Porgramming-Hero-web-course/b6a11-service-review-client-side-freelancershijan)
